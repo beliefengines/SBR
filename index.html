@@ -146,10 +146,10 @@
     .hero-inner {
       max-width: 1100px;
       width: 100%;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 3rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       position: relative;
       z-index: 1;
     }
@@ -158,6 +158,8 @@
       width: 220px;
       height: 220px;
       flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .hero-text { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -268,6 +270,56 @@
       color: var(--orange);
       margin: 1.5rem 0 0;
       display: block;
+    }
+
+    /* ─── COLOR BREAKUP ─── */
+    .color-break {
+      background: var(--orange);
+      color: var(--cream);
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .color-break::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0,0,0,0.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .color-break-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .color-break h2 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      color: var(--cream);
+      line-height: 0.95;
+    }
+    .color-break .tagline {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 1rem;
+    }
+    .color-break .break-year {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(6rem, 15vw, 12rem);
+      line-height: 0.85;
+      color: var(--cream);
+      opacity: 0.12;
+      position: absolute;
+      right: -1rem;
+      bottom: -1.5rem;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
     }
 
     /* ─── EVENTS SECTION ─── */
@@ -575,15 +627,9 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-      }
       .hero-logo {
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
+        width: 180px;
+        height: 180px;
       }
       .hero-month { display: none; }
       .hero-year { font-size: 8rem; right: -0.5rem; bottom: -1rem; }
@@ -603,7 +649,7 @@
       .hero { padding: 5rem 1.25rem 3rem; }
       .events { padding: 3rem 1.25rem 4rem; }
       .connect { padding: 3.5rem 1.25rem; }
-      .hero-logo { width: 130px; height: 130px; }
+      .hero-logo { width: 150px; height: 150px; }
       nav { padding: 0.6rem 1rem; }
       nav .nav-brand { font-size: 1rem; }
     }
@@ -632,49 +678,7 @@
   <!-- ─── HERO ─── -->
   <section class="hero" id="top">
     <div class="hero-inner">
-      <svg class="hero-logo" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-        <!-- Outer ring -->
-        <circle cx="120" cy="120" r="112" fill="none" stroke="#FBF0DD" stroke-width="5"/>
-        <circle cx="120" cy="120" r="104" fill="none" stroke="#FBF0DD" stroke-width="1.5"/>
-        <circle cx="120" cy="120" r="96" fill="rgba(251,240,221,0.08)" stroke="#FBF0DD" stroke-width="1.5"/>
-
-        <!-- Text on path -->
-        <defs>
-          <path id="topArc" d="M 30,120 a 90,90 0 1,1 180,0" fill="none"/>
-          <path id="bottomArc" d="M 210,120 a 90,90 0 1,1 -180,0" fill="none"/>
-        </defs>
-        <text fill="#FBF0DD" font-family="'Anton', sans-serif" font-size="17" letter-spacing="6">
-          <textPath href="#topArc" startOffset="50%" text-anchor="middle">SOVEREIGN</textPath>
-        </text>
-        <text fill="#FBF0DD" font-family="'Anton', sans-serif" font-size="15" letter-spacing="5">
-          <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">BEACH RESEARCH</textPath>
-        </text>
-
-        <!-- Palm tree -->
-        <g transform="translate(120,95) scale(0.85)" fill="#FBF0DD">
-          <!-- Trunk -->
-          <path d="M-2,15 Q0,40 -3,60 L3,60 Q2,40 4,15 Z" opacity="0.9"/>
-          <!-- Fronds -->
-          <path d="M0,15 Q-25,-5 -40,5 Q-20,0 0,12 Z"/>
-          <path d="M0,15 Q25,-5 40,5 Q20,0 0,12 Z"/>
-          <path d="M0,12 Q-20,-15 -35,-10 Q-15,-8 0,8 Z"/>
-          <path d="M0,12 Q20,-15 35,-10 Q15,-8 0,8 Z"/>
-          <path d="M0,10 Q-5,-25 -15,-28 Q-3,-18 0,6 Z"/>
-          <path d="M0,10 Q5,-25 15,-28 Q3,-18 0,6 Z"/>
-        </g>
-
-        <!-- Bitcoin symbol -->
-        <text x="120" y="178" text-anchor="middle" fill="#FBF0DD" font-family="'Anton', sans-serif" font-size="28" letter-spacing="1">₿</text>
-      </svg>
-
-      <div class="hero-text">
-        <div class="subtitle">San Diego Bitcoin Community</div>
-        <div class="hero-divider"></div>
-        <h1>Sovereign<br>Beach<br>Research</h1>
-        <div class="hero-divider"></div>
-        <div class="tagline">SBR + Local Meetups — March 2026</div>
-      </div>
-
+      <img class="hero-logo" src="logo.jpeg" alt="Sovereign Beach Research — San Diego Bitcoin">
       <div class="hero-year">2026</div>
       <div class="hero-month">MARCH</div>
     </div>
@@ -692,6 +696,15 @@
         occasional wake & bake.
       </p>
       <span class="bitcoin-symbol reveal delay-3">₿</span>
+    </div>
+  </section>
+
+  <!-- ─── COLOR BREAKUP ─── -->
+  <section class="color-break">
+    <div class="color-break-inner">
+      <h2 class="reveal">SBR</h2>
+      <div class="tagline reveal delay-1">SBR + Local Meetups — March 2026</div>
+      <div class="break-year">2026</div>
     </div>
   </section>
 
@@ -867,19 +880,6 @@
         @keyframes logoSpin {
           from { opacity: 0; transform: scale(0.8) rotate(-10deg); }
           to { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-        .hero-text > * {
-          opacity: 0;
-          animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
-        }
-        .hero-text > *:nth-child(1) { animation-delay: 0.2s; }
-        .hero-text > *:nth-child(2) { animation-delay: 0.3s; }
-        .hero-text > *:nth-child(3) { animation-delay: 0.4s; }
-        .hero-text > *:nth-child(4) { animation-delay: 0.5s; }
-        .hero-text > *:nth-child(5) { animation-delay: 0.6s; }
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
         }
       `;
       document.head.appendChild(style);
