@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SBR — Sovereign Beach Research | San Diego Bitcoin</title>
-  <meta name="description" content="The SD Bitcoiner's Third Space. Bitcoin meetups, events, and community in San Diego.">
+  <meta name="description" content="The SD Bitcoiners' Third Space. Bitcoin meetups, events, and community in San Diego.">
   <meta property="og:title" content="Sovereign Beach Research — San Diego Bitcoin">
-  <meta property="og:description" content="The SD Bitcoiner's Third Space. Bring a friend. Don't bring your seed phrase.">
+  <meta property="og:description" content="The SD Bitcoiners' Third Space. Bring a friend. Don't bring your seed phrase.">
   <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,6 +243,31 @@
       font-size: 1.2rem;
       margin-top: 0.5rem;
       opacity: 0.9;
+    }
+
+    .hero-cta {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .btn-hero {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--cream);
+      border: 3px solid var(--cream);
+      padding: 0.85rem 2.5rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-hero:hover {
+      background: var(--cream);
+      color: var(--orange);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
     }
 
     /* hero-year and hero-month removed */
@@ -701,19 +726,22 @@
       <div class="hero-logo-wrapper">
         <img class="hero-logo" src="logo.jpeg" alt="Sovereign Beach Research — San Diego Bitcoin">
       </div>
+      <div class="hero-cta">
+        <a href="#events" class="btn-hero">See What's Coming Up</a>
+      </div>
     </div>
   </section>
 
   <!-- ─── ABOUT ─── -->
   <section class="about" id="about">
     <div class="about-inner">
-      <h2 class="reveal">The SD Bitcoiner's<br><span class="highlight">Third Space</span></h2>
+      <h2 class="reveal">The SD Bitcoiners'<br><span class="highlight">Third Space</span></h2>
       <div class="section-rule reveal delay-1"></div>
       <p class="reveal delay-2">
         Sovereign Beach Research is San Diego's home base for Bitcoiners.
         Not a bar, not your couch — a third space where the signal stays strong
         and the community runs deep. Meetups, workshops, family days, and the
-        occasional wake & bake.
+        occasional wake &amp; bake — something for everyone.
       </p>
       <span class="bitcoin-symbol reveal delay-3">₿</span>
     </div>
@@ -730,6 +758,9 @@
 
   <!-- ─── EVENTS ─── -->
   <section class="events" id="events">
+    <div class="events-header reveal" style="text-align:center; max-width:1100px; margin:0 auto 1.5rem;">
+      <p style="font-family:'Oswald',sans-serif; font-size:0.8rem; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; opacity:0.5;">All times Pacific (PT)</p>
+    </div>
     <div class="events-inner">
 
       <!-- Local Meetups -->
@@ -743,7 +774,7 @@
         </div>
 
         <div class="event-card reveal delay-2">
-          <div class="event-date">THU 3/12 &bull; March 2026 Cete</div>
+          <div class="event-date">THU 3/12 &bull; San Diego Bitcoiners Meetup</div>
           <div class="event-details">6pm–9pm &bull; Kearny Mesa</div>
           <a class="rsvp" href="https://lu.ma/sdbitcoiners" target="_blank" rel="noopener">RSVP &rarr;</a>
         </div>
@@ -778,8 +809,8 @@
         </div>
 
         <div class="event-card reveal delay-3">
-          <div class="event-date">AI Intro Seminar</div>
-          <div class="event-details">7pm &bull; Escondido Bitcoin Meetup</div>
+          <div class="event-date">Date TBA &bull; AI Intro Seminar</div>
+          <div class="event-details">7:00pm &bull; Escondido</div>
           <div class="event-description">Intro to Sovereign AI</div>
         </div>
       </div>
